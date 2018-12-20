@@ -35,7 +35,7 @@ ys_hg_prompt_info() {
 	fi
 }
 
-local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
+local exit_code="%(?,,[%{$fg[red]%}%?%{$reset_color%}])"
 
 # Prompt format:
 #
@@ -46,7 +46,7 @@ local exit_code="%(?,,C:%{$fg[red]%}%?%{$reset_color%})"
 #
 # % ys @ ys-mbp in ~/.oh-my-zsh on git:master x [21:47:42] C:0
 # $
-PROMPT="
+PROMPT="\
 %{$terminfo[bold]$fg[blue]%}#%{$reset_color%} \
 %(#,%{$bg[yellow]%}%{$fg[black]%}%n%{$reset_color%},%{$fg[cyan]%}%n) \
 %{$fg[white]%}@ \
@@ -56,5 +56,5 @@ PROMPT="
 ${hg_info}\
 ${git_info}\
  \
-%{$fg[white]%}[%*] $exit_code
+%{$fg[white]%}$exit_code
 %{$terminfo[bold]$fg[red]%}$ %{$reset_color%}"
